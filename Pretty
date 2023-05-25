@@ -1,0 +1,24 @@
+from turtle import Turtle, Screen
+import random
+
+COLORS = ["red", "blue", "green", "yellow", "orange", "black", "purple"]
+
+ball = Turtle('circle')
+screen = Screen()
+screen.listen()
+screen.tracer(0)
+
+game_is_on = True
+
+while game_is_on:
+    pencolor = random.choice(COLORS)
+    ball.pencolor(pencolor)
+    distance = random.randint(1, 20)
+    ball.forward(distance)
+    ball.left(distance)
+    ball.backward(distance)
+    ball.right(distance)
+    ball.right(50)
+    screen.update()
+
+screen.exitonclick()
